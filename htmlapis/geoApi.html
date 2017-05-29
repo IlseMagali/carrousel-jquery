@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #mapa {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapa">
+
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzx1LCfIhe8iQ6pDTFyP3mwV_ZQX5Z1NI&callback=initMap"
+      async defer>
+    </script>
+    <script type="text/javascript">
+      function initMap(){
+        var mapaContenedor = document.getElementById("mapa");
+        var coordenadasLaboratoria = {lat: -12.1191427 , lng: -77.0349046 };
+        var mapa = new google.maps.Map(
+          mapaContenedor,
+          {
+            zoom: 18,
+            center: coordenadasLaboratoria
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

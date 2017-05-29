@@ -1,0 +1,17 @@
+.jcarrousel {
+  position:relative;
+}
+.jcarrousel li {
+  list-style: none;
+  display:block;
+  position:absolute;
+}
+
+img {
+  height: 220px;
+  width: 400px;
+}
+
+.botones {
+  float:right;
+}

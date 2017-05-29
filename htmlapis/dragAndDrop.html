@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Drag & Drop</title>
+    <style media="screen">
+      .cuadro {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        position:fixed;
+        top:220px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--  -->
+    <img src="http://dummyimage.com/100x100" draggable="true" alt="cuadro" id="imagen">
+    <div class="cuadro" id="destino">
+
+    </div>
+    <script>
+      //fase uno: drag - evento aplicable a la imagen
+      var imagen = document.getElementById("imagen");
+      imagen.addEventListener("dragstart", iniciarDrag);
+
+      function iniciarDrag() {
+        // console.log(this); this es la imagen
+        // this.style.opacity = "0.3";
+        //data transfer guarda datos del elemento que se va a mover
+        event.dataTransfer.setData("idDeImagen", event.target.id);
+        console.log(event.target.id);
+
+      }
+
+      //fase dos: dragging - evento aplicable a lo que le demos drop
+      var destino = document.getElementById("destino");
+      destino.addEventListener("dragover", manejarDrag);
+      destino.addEventListener("drop", soltarElemento);
+      // la funcion define a donde llegar, no tanto la acción de hacer el dragging
+      function manejarDrag() {
+        event.preventDefault(); // dos elementos no pueden ocupar el mismo espacio, pero con esto
+        // lo permitimos, para que no haga sus cosas por default
+      }
+
+      //fase tres: drop
+      function soltarElemento() {
+        var idDeImagen = event.dataTransfer.getData("idDeImagen");
+        // console.log("idDeImagen");
+        event.target.appendChild(document.getElementById("imagen"));
+      }
+    </script>
+  </body>
+</html>
