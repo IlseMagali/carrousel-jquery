@@ -10,8 +10,9 @@
 img {
   height: 220px;
   width: 400px;
+  margin-top:30px;
 }
 
 .botones {
-  float:right;
+  float:left;
 }
