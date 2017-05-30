@@ -1,18 +1,7 @@
-.jcarrousel {
-  position:relative;
+.carrousel-content {
+  display:none;
 }
-.jcarrousel li {
-  list-style: none;
+
+.carrousel-content.active {
   display:block;
-  position:absolute;
-}
-
-img {
-  height: 220px;
-  width: 400px;
-  margin-top:30px;
-}
-
-.botones {
-  float:left;
 }
